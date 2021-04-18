@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bibl_Streaming", "Bibl_Streaming\Bibl_Streaming.csproj", "{C7CE520A-7625-4D2D-A5CE-7ABF5C84E074}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7CE520A-7625-4D2D-A5CE-7ABF5C84E074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CE520A-7625-4D2D-A5CE-7ABF5C84E074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CE520A-7625-4D2D-A5CE-7ABF5C84E074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CE520A-7625-4D2D-A5CE-7ABF5C84E074}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23C55957-FF76-46CE-90A7-2E710D557FB8}
+	EndGlobalSection
+EndGlobal
