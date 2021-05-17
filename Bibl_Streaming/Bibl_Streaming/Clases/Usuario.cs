@@ -8,10 +8,12 @@ namespace Bibl_Streaming.Clases
 {
     class Usuario
     {
+        //Atributos
         private ushort id_interno;
         private string nombre;
         private DateTime fecha_afiliacion;
 
+        //Constructores
         public Usuario(ushort id_interno, string nombre, DateTime fecha_afiliacion)
         {
             Id_interno = id_interno;
@@ -20,6 +22,7 @@ namespace Bibl_Streaming.Clases
 
         }
 
+        //Accesores
         public ushort Id_interno
         {
             get => id_interno; set
