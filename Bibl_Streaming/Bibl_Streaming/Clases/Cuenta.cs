@@ -18,8 +18,5 @@ namespace Bibl_Streaming.Clases
             this.usuario = usuario;
             this.contenido_visto = contenido_visto;
         }
-
-        //Accesores
-
     }
 }

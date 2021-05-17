@@ -28,13 +28,9 @@ namespace Bibl_Streaming.Clases
             get => id_interno; set
             {
                 if (value < 0)
-                {
                     throw new Exception("El id interno no puede ser negativo");
-                }
                 else
-                {
                     id_interno = value;
-                }
             }
         }
         public string Nombre
@@ -42,13 +38,9 @@ namespace Bibl_Streaming.Clases
             get => nombre; set
             {
                 if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                {
                     throw new Exception("El nombre no puede ser nulo o estar vacio.");
-                }
                 else
-                {
                     nombre = value;
-                }
             }
         }
         public DateTime Fecha_afiliacion
@@ -56,13 +48,9 @@ namespace Bibl_Streaming.Clases
             get => fecha_afiliacion; set
             {
                 if (value.Year < 1800 || value.Year > DateTime.Now.Year)
-                {
                     throw new Exception("No hay afiliaciones antes de 1800 ni tampoco se puede afiliar en un año mayor al año actual.");
-                }
                 else
-                {
                     fecha_afiliacion = value;
-                }
             }
         }
     }
