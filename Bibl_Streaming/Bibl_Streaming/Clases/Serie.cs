@@ -27,8 +27,35 @@ namespace Bibl_Streaming.Clases
         { 
             get => nombre; set => nombre = value; 
         }
-        public byte Cap_temporada { get => cap_temporada; set => cap_temporada = value; }
+        public byte Cap_temporada 
+        { 
+            get => cap_temporada; 
+            set
+            {
+                if (value < 0 || value == 0)
+                    throw new Exception("Las temporadas no tienen pueden tener 0 o menos capitulos.");
+                else
+                    cap_temporada = value;
+            }
+        }
         internal l_temporadas Temporadas_serie { get => temporadas_serie; set => temporadas_serie = value; }
 
+        //Metodos
+        public string Acumular_puntos(ulong episodios_vistos, Cuenta cuenta_viendo)
+        {
+            try
+            {
+                ulong puntos_por_capitulo;
+
+                puntos_por_capitulo = (episodios_vistos);
+                cuenta_viendo.Suma_capitulos += puntos_por_capitulo / 2;
+                cuenta_viendo.Acumulador_de_puntos();
+                return "Total puntos acumulados: " + cuenta_viendo.Puntos_totales;
+            }
+            catch (Exception)
+            {
+                throw new Exception("ERROR: ocurrio un error en clase AAcumular_puntos en clase Serie");
+            }
+        }
     }
 }

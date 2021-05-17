@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Clases\Contenido.cs" />
     <Compile Include="Clases\Cuenta.cs" />
+    <Compile Include="Clases\Juego.cs" />
     <Compile Include="Clases\Pelicula.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Serie.cs" />
