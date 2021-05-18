@@ -4,3 +4,9 @@ C:\Users\Personal\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\
 C:\Users\Personal\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\obj\Debug\Bibl_Streaming.csproj.CoreCompileInputs.cache
 C:\Users\Personal\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\obj\Debug\Bibl_Streaming.dll
 C:\Users\Personal\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\obj\Debug\Bibl_Streaming.pdb
+C:\Users\maria\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\bin\Debug\Bibl_Streaming.dll
+C:\Users\maria\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\bin\Debug\Bibl_Streaming.pdb
+C:\Users\maria\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\obj\Debug\Bibl_Streaming.csprojAssemblyReference.cache
+C:\Users\maria\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\obj\Debug\Bibl_Streaming.csproj.CoreCompileInputs.cache
+C:\Users\maria\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\obj\Debug\Bibl_Streaming.dll
+C:\Users\maria\Documents\Repositorio\Streaming\Bibl_Streaming\Bibl_Streaming\obj\Debug\Bibl_Streaming.pdb
