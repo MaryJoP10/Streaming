@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bibl_Streaming.Clases
 {
-    class Usuario
+    public class Usuario
     {
         //Atributos
         private ushort id_interno;

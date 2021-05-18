@@ -1,0 +1,13 @@
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.csprojAssemblyReference.cache
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.Properties.Resources.resources
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.csproj.GenerateResource.cache
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.csproj.CoreCompileInputs.cache
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\bin\Debug\Streaming.exe.config
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\bin\Debug\Streaming.exe
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\bin\Debug\Streaming.pdb
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\bin\Debug\Bibl_Streaming.dll
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\bin\Debug\Bibl_Streaming.pdb
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.csproj.CopyComplete
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.exe
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.pdb
+C:\Users\maria\Documents\Repositorio\Streaming\Streaming\obj\Debug\Streaming.pp.resources

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bibl_Streaming.Clases
 {
-    class Serie
+    public class Serie
     {
         //Atributos
         private string nombre;
-        public enum l_temporadas { una, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince, dieciseis, diecisiete, dieciocho, diecinueve, veinte};
+        public enum l_temporadas { Una, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho, Nueve, Diez, Once, Doce, Trece, Catorce, Quince, Dieciseis, Diecisiete, Dieciocho, Diecinueve, Veinte};
         private byte cap_temporada;
         private l_temporadas temporadas_serie;
 

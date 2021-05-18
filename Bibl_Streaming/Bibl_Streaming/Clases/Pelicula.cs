@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bibl_Streaming.Clases
 {
-    class Pelicula
+    public class Pelicula
     {
         //Atributos
         private string nombre;
