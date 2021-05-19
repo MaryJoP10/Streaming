@@ -83,7 +83,7 @@ namespace Streaming
             this.label24 = new System.Windows.Forms.Label();
             this.b_infopelicula = new System.Windows.Forms.Button();
             this.tb_score = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_vistos = new System.Windows.Forms.TextBox();
             this.lb_info = new System.Windows.Forms.ListBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -298,7 +298,7 @@ namespace Streaming
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lb_info);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tb_vistos);
             this.groupBox1.Controls.Add(this.tb_score);
             this.groupBox1.Controls.Add(this.b_infopelicula);
             this.groupBox1.Controls.Add(this.label24);
@@ -327,6 +327,7 @@ namespace Streaming
             this.b_infoserie.TabIndex = 37;
             this.b_infoserie.Text = "Serie";
             this.b_infoserie.UseVisualStyleBackColor = true;
+            this.b_infoserie.Click += new System.EventHandler(this.b_infoserie_Click);
             // 
             // b_infojuego
             // 
@@ -557,6 +558,7 @@ namespace Streaming
             this.tb_acumulado.ReadOnly = true;
             this.tb_acumulado.Size = new System.Drawing.Size(230, 20);
             this.tb_acumulado.TabIndex = 32;
+            this.tb_acumulado.TextChanged += new System.EventHandler(this.tb_acumulado_TextChanged);
             // 
             // label20
             // 
@@ -624,6 +626,7 @@ namespace Streaming
             this.b_infopelicula.TabIndex = 42;
             this.b_infopelicula.Text = "Pelicula";
             this.b_infopelicula.UseVisualStyleBackColor = true;
+            this.b_infopelicula.Click += new System.EventHandler(this.b_infopelicula_Click);
             // 
             // tb_score
             // 
@@ -632,12 +635,12 @@ namespace Streaming
             this.tb_score.Size = new System.Drawing.Size(74, 20);
             this.tb_score.TabIndex = 35;
             // 
-            // textBox2
+            // tb_vistos
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 146);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 20);
-            this.textBox2.TabIndex = 43;
+            this.tb_vistos.Location = new System.Drawing.Point(123, 146);
+            this.tb_vistos.Name = "tb_vistos";
+            this.tb_vistos.Size = new System.Drawing.Size(79, 20);
+            this.tb_vistos.TabIndex = 43;
             // 
             // lb_info
             // 
@@ -726,7 +729,7 @@ namespace Streaming
         private System.Windows.Forms.Button b_infojuego;
         private System.Windows.Forms.Button b_generar;
         private System.Windows.Forms.ListBox lb_cuentas;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_vistos;
         private System.Windows.Forms.TextBox tb_score;
         private System.Windows.Forms.Button b_infopelicula;
         private System.Windows.Forms.Label label24;

@@ -57,7 +57,21 @@ namespace Bibl_Streaming.Clases
         }
 
         //Metodos
-        
+        public ulong Acumular_Puntos(ulong minutos_vistos, Cuenta cuenta_viendo)
+        {
+            try
+            {
+                ulong minutos_vistos_aux;
+
+                minutos_vistos_aux = (minutos_vistos);
+                cuenta_viendo.Suma_minutos += minutos_vistos_aux / 60;
+                return minutos_vistos_aux / 60;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocurrió un error en el método Acumular_Puntos en la clase Pelicula.");
+            }
+        }
         public override string ToString()
         {
             return nombre;

@@ -44,7 +44,7 @@ namespace Bibl_Streaming.Clases
         }
 
         //Metodos
-        public int Acumular_Puntos(byte score, Cuenta cuenta_jugando)
+        public ulong Acumular_Puntos(byte score, Cuenta cuenta_jugando)
         {
             try
             {

@@ -128,6 +128,11 @@ namespace Streaming
             tb_usuario.Clear();
             tb_usuario.Focus();
         }
+        private void Limpia()
+        {
+            tb_score.Clear();
+            tb_vistos.Clear();
+        }
 
         private void b_infojuego_Click(object sender, EventArgs e)
         {
@@ -173,7 +178,7 @@ namespace Streaming
         private void cb_cuentas_info_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cuenta cuenta_aux = lb_cuentas.SelectedItem as Cuenta;
-            tb_acumulado.Text = cuenta_aux.Puntos_totales.ToString();
+            tb_acumulado.Text = cuenta_aux.Acumulador_de_puntos().ToString();
 
             Limp();
         }
@@ -185,11 +190,47 @@ namespace Streaming
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<string> agg = new List<string>();
+            agg.Add("Puntos agregados con exito.");
+            Cuenta cuenta_aux = lb_cuentas.SelectedItem as Cuenta;
 
+            tb_acumulado.Text = cuenta_aux.Acumulador_de_puntos().ToString();
+
+            lb_info.DataSource = agg;
+            Limpia();
         }
 
         private void lb_info_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void b_infoserie_Click(object sender, EventArgs e)
+        {
+            List<string> l_lbseries = new List<string>();
+            Cuenta cuenta_aux = lb_cuentas.SelectedItem as Cuenta;
+            Serie serie = cb_series.SelectedItem as Serie;
+            l_lbseries.Add("Nombre de la serie: " + serie.Nombre);
+            l_lbseries.Add("Capitulos por temporada: " + serie.Cap_temporada);
+            l_lbseries.Add("Capitulos vistos: " + tb_vistos.Text);
+            l_lbseries.Add("Puntos a agregar: " + serie.Acumular_Puntos(ulong.Parse(tb_vistos.Text), cuenta_aux));
+            lb_info.DataSource = l_lbseries;
+        }
+
+        private void b_infopelicula_Click(object sender, EventArgs e)
+        {
+            List<string> l_lbpeliculas = new List<string>();
+            Cuenta cuenta_aux = lb_cuentas.SelectedItem as Cuenta;
+            Pelicula pelicula = cb_peliculas.SelectedItem as Pelicula;
+            l_lbpeliculas.Add("Nombre de la pelicula: " + pelicula.Nombre);
+            l_lbpeliculas.Add("Duración: " + pelicula.Duracion);
+            l_lbpeliculas.Add("Calificación: " + pelicula.Calificacion);
+            l_lbpeliculas.Add("Puntos a agregar: " + pelicula.Acumular_Puntos(pelicula.Duracion, cuenta_aux));
+            lb_info.DataSource = l_lbpeliculas;
+        }
+
+        private void tb_acumulado_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

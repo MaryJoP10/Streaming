@@ -33,12 +33,12 @@ namespace Bibl_Streaming.Clases
             set
             {
                 if (value < 0 || value == 0)
-                    throw new Exception("Las temporadas no tienen pueden tener 0 o menos capitulos.");
+                    throw new Exception("Las temporadas no tienen 0 o menos capitulos.");
                 else
                     cap_temporada = value;
             }
         }
-        internal l_temporadas Temporadas_serie { get => temporadas_serie; set => temporadas_serie = value; }
+        public l_temporadas Temporadas_serie { get => temporadas_serie; set => temporadas_serie = value; }
 
         //Metodos
         public ulong Acumular_Puntos(ulong episodios_vistos, Cuenta cuenta_viendo)
@@ -53,7 +53,7 @@ namespace Bibl_Streaming.Clases
             }
             catch (Exception)
             {
-                throw new Exception("ERROR: ocurrio un error en clase AAcumular_puntos en clase Serie");
+                throw new Exception("Ocurrió un error en el método Acumular_Puntos en la clase Serie.");
             }
         }
         public override string ToString()
