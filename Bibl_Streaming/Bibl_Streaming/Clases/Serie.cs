@@ -57,5 +57,9 @@ namespace Bibl_Streaming.Clases
                 throw new Exception("ERROR: ocurrio un error en clase AAcumular_puntos en clase Serie");
             }
         }
+        public override string ToString()
+        {
+            return nombre;
+        }
     }
 }

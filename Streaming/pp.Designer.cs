@@ -54,22 +54,19 @@ namespace Streaming
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lb_info = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_peliculas = new System.Windows.Forms.ComboBox();
+            this.cb_series = new System.Windows.Forms.ComboBox();
+            this.cb_juegos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.b_crear = new System.Windows.Forms.Button();
+            this.tb_fecha = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tb_id = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tb_usuario = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -79,6 +76,11 @@ namespace Streaming
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.b_infojuego = new System.Windows.Forms.Button();
+            this.b_infoserie = new System.Windows.Forms.Button();
+            this.b_infopelicula = new System.Windows.Forms.Button();
+            this.b_generar = new System.Windows.Forms.Button();
+            this.lb_cuentas = new System.Windows.Forms.ListBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -120,6 +122,7 @@ namespace Streaming
             this.cb_tipo.Name = "cb_tipo";
             this.cb_tipo.Size = new System.Drawing.Size(150, 21);
             this.cb_tipo.TabIndex = 34;
+            this.cb_tipo.SelectedIndexChanged += new System.EventHandler(this.cb_tipo_SelectedIndexChanged);
             // 
             // tb_calificacion
             // 
@@ -144,15 +147,15 @@ namespace Streaming
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(7, 271);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.Size = new System.Drawing.Size(80, 13);
             this.label12.TabIndex = 25;
-            this.label12.Text = "Duración";
+            this.label12.Text = "Duración (mins)";
             // 
             // tb_duracion
             // 
             this.tb_duracion.Location = new System.Drawing.Point(9, 290);
             this.tb_duracion.Name = "tb_duracion";
-            this.tb_duracion.Size = new System.Drawing.Size(64, 20);
+            this.tb_duracion.Size = new System.Drawing.Size(78, 20);
             this.tb_duracion.TabIndex = 24;
             // 
             // label11
@@ -276,6 +279,7 @@ namespace Streaming
             this.b_anadir.TabIndex = 3;
             this.b_anadir.Text = "Añadir";
             this.b_anadir.UseVisualStyleBackColor = true;
+            this.b_anadir.Click += new System.EventHandler(this.b_anadir_Click);
             // 
             // label3
             // 
@@ -289,17 +293,17 @@ namespace Streaming
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.b_infopelicula);
+            this.groupBox1.Controls.Add(this.b_infoserie);
+            this.groupBox1.Controls.Add(this.b_infojuego);
             this.groupBox1.Controls.Add(this.comboBox10);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.lb_info);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox5);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.comboBox6);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cb_peliculas);
+            this.groupBox1.Controls.Add(this.cb_series);
+            this.groupBox1.Controls.Add(this.cb_juegos);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(287, 75);
             this.groupBox1.Name = "groupBox1";
@@ -335,13 +339,13 @@ namespace Streaming
             this.label14.TabIndex = 13;
             this.label14.Text = "Información de contenido";
             // 
-            // listBox1
+            // lb_info
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 199);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(213, 56);
-            this.listBox1.TabIndex = 12;
+            this.lb_info.FormattingEnabled = true;
+            this.lb_info.Location = new System.Drawing.Point(6, 199);
+            this.lb_info.Name = "lb_info";
+            this.lb_info.Size = new System.Drawing.Size(213, 56);
+            this.lb_info.TabIndex = 12;
             // 
             // button1
             // 
@@ -352,53 +356,33 @@ namespace Streaming
             this.button1.Text = "Agregar a cuenta";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox5
+            // cb_peliculas
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(6, 141);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(67, 21);
-            this.comboBox5.TabIndex = 10;
+            this.cb_peliculas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_peliculas.FormattingEnabled = true;
+            this.cb_peliculas.Location = new System.Drawing.Point(6, 101);
+            this.cb_peliculas.Name = "cb_peliculas";
+            this.cb_peliculas.Size = new System.Drawing.Size(187, 21);
+            this.cb_peliculas.TabIndex = 5;
             // 
-            // comboBox4
+            // cb_series
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(79, 141);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(67, 21);
-            this.comboBox4.TabIndex = 9;
+            this.cb_series.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_series.FormattingEnabled = true;
+            this.cb_series.Location = new System.Drawing.Point(6, 74);
+            this.cb_series.Name = "cb_series";
+            this.cb_series.Size = new System.Drawing.Size(187, 21);
+            this.cb_series.TabIndex = 4;
             // 
-            // comboBox6
+            // cb_juegos
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(152, 141);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(67, 21);
-            this.comboBox6.TabIndex = 8;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 101);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(187, 21);
-            this.comboBox3.TabIndex = 5;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 74);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(187, 21);
-            this.comboBox2.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cb_juegos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_juegos.FormattingEnabled = true;
+            this.cb_juegos.Location = new System.Drawing.Point(6, 47);
+            this.cb_juegos.Name = "cb_juegos";
+            this.cb_juegos.Size = new System.Drawing.Size(187, 21);
+            this.cb_juegos.TabIndex = 3;
+            this.cb_juegos.SelectedIndexChanged += new System.EventHandler(this.cb_juegos_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -412,12 +396,13 @@ namespace Streaming
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.b_generar);
+            this.groupBox3.Controls.Add(this.b_crear);
+            this.groupBox3.Controls.Add(this.tb_fecha);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.tb_id);
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.tb_usuario);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Location = new System.Drawing.Point(543, 75);
@@ -426,22 +411,24 @@ namespace Streaming
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             // 
-            // button3
+            // b_crear
             // 
-            this.button3.Location = new System.Drawing.Point(72, 172);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 34);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Crear cuenta";
-            this.button3.UseVisualStyleBackColor = true;
+            this.b_crear.Location = new System.Drawing.Point(72, 172);
+            this.b_crear.Name = "b_crear";
+            this.b_crear.Size = new System.Drawing.Size(99, 34);
+            this.b_crear.TabIndex = 28;
+            this.b_crear.Text = "Crear cuenta";
+            this.b_crear.UseVisualStyleBackColor = true;
+            this.b_crear.Click += new System.EventHandler(this.b_crear_Click);
             // 
-            // textBox8
+            // tb_fecha
             // 
-            this.textBox8.Location = new System.Drawing.Point(9, 146);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(230, 20);
-            this.textBox8.TabIndex = 32;
+            this.tb_fecha.Location = new System.Drawing.Point(9, 146);
+            this.tb_fecha.Name = "tb_fecha";
+            this.tb_fecha.ReadOnly = true;
+            this.tb_fecha.Size = new System.Drawing.Size(230, 20);
+            this.tb_fecha.TabIndex = 32;
+            this.tb_fecha.TextChanged += new System.EventHandler(this.tb_fecha_TextChanged);
             // 
             // label18
             // 
@@ -453,12 +440,13 @@ namespace Streaming
             this.label18.TabIndex = 31;
             this.label18.Text = "Fecha de afiliación";
             // 
-            // textBox7
+            // tb_id
             // 
-            this.textBox7.Location = new System.Drawing.Point(9, 103);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(230, 20);
-            this.textBox7.TabIndex = 30;
+            this.tb_id.Location = new System.Drawing.Point(9, 103);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.ReadOnly = true;
+            this.tb_id.Size = new System.Drawing.Size(137, 20);
+            this.tb_id.TabIndex = 30;
             // 
             // label17
             // 
@@ -470,12 +458,12 @@ namespace Streaming
             this.label17.TabIndex = 29;
             this.label17.Text = "ID";
             // 
-            // textBox6
+            // tb_usuario
             // 
-            this.textBox6.Location = new System.Drawing.Point(9, 58);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(230, 20);
-            this.textBox6.TabIndex = 28;
+            this.tb_usuario.Location = new System.Drawing.Point(9, 58);
+            this.tb_usuario.Name = "tb_usuario";
+            this.tb_usuario.Size = new System.Drawing.Size(230, 20);
+            this.tb_usuario.TabIndex = 28;
             // 
             // label16
             // 
@@ -566,11 +554,58 @@ namespace Streaming
             this.label1.TabIndex = 35;
             this.label1.Text = "Streaming";
             // 
+            // b_infojuego
+            // 
+            this.b_infojuego.Location = new System.Drawing.Point(6, 141);
+            this.b_infojuego.Name = "b_infojuego";
+            this.b_infojuego.Size = new System.Drawing.Size(67, 21);
+            this.b_infojuego.TabIndex = 36;
+            this.b_infojuego.Text = "Juego";
+            this.b_infojuego.UseVisualStyleBackColor = true;
+            this.b_infojuego.Click += new System.EventHandler(this.b_infojuego_Click);
+            // 
+            // b_infoserie
+            // 
+            this.b_infoserie.Location = new System.Drawing.Point(79, 141);
+            this.b_infoserie.Name = "b_infoserie";
+            this.b_infoserie.Size = new System.Drawing.Size(67, 21);
+            this.b_infoserie.TabIndex = 37;
+            this.b_infoserie.Text = "Serie";
+            this.b_infoserie.UseVisualStyleBackColor = true;
+            // 
+            // b_infopelicula
+            // 
+            this.b_infopelicula.Location = new System.Drawing.Point(152, 141);
+            this.b_infopelicula.Name = "b_infopelicula";
+            this.b_infopelicula.Size = new System.Drawing.Size(67, 21);
+            this.b_infopelicula.TabIndex = 38;
+            this.b_infopelicula.Text = "Pelicula";
+            this.b_infopelicula.UseVisualStyleBackColor = true;
+            // 
+            // b_generar
+            // 
+            this.b_generar.Location = new System.Drawing.Point(172, 104);
+            this.b_generar.Name = "b_generar";
+            this.b_generar.Size = new System.Drawing.Size(67, 21);
+            this.b_generar.TabIndex = 39;
+            this.b_generar.Text = "Generar Id";
+            this.b_generar.UseVisualStyleBackColor = true;
+            this.b_generar.Click += new System.EventHandler(this.b_generar_Click);
+            // 
+            // lb_cuentas
+            // 
+            this.lb_cuentas.FormattingEnabled = true;
+            this.lb_cuentas.Location = new System.Drawing.Point(817, 83);
+            this.lb_cuentas.Name = "lb_cuentas";
+            this.lb_cuentas.Size = new System.Drawing.Size(104, 355);
+            this.lb_cuentas.TabIndex = 36;
+            // 
             // pp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(932, 447);
+            this.Controls.Add(this.lb_cuentas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -619,22 +654,19 @@ namespace Streaming
         private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lb_info;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_peliculas;
+        private System.Windows.Forms.ComboBox cb_series;
+        private System.Windows.Forms.ComboBox cb_juegos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button b_crear;
+        private System.Windows.Forms.TextBox tb_fecha;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tb_usuario;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -644,5 +676,10 @@ namespace Streaming
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button b_infopelicula;
+        private System.Windows.Forms.Button b_infoserie;
+        private System.Windows.Forms.Button b_infojuego;
+        private System.Windows.Forms.Button b_generar;
+        private System.Windows.Forms.ListBox lb_cuentas;
     }
 }

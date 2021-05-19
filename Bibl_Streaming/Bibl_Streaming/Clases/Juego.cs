@@ -59,5 +59,9 @@ namespace Bibl_Streaming.Clases
                 throw new Exception("ocurrio un error en metodo acumular_puntos de clase juego");
             }
         }
+        public override string ToString()
+        {
+            return nombre;
+        }
     }
 }

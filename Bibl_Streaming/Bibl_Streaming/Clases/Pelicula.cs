@@ -10,11 +10,11 @@ namespace Bibl_Streaming.Clases
     {
         //Atributos
         private string nombre;
-        private double duracion;
+        private ushort duracion;
         private float calificacion;
 
         //Constructores
-        public Pelicula(string nombre, double duracion, float calificacion)
+        public Pelicula(string nombre, ushort duracion, float calificacion)
         {
             Nombre = nombre;
             Duracion = duracion;
@@ -33,7 +33,7 @@ namespace Bibl_Streaming.Clases
                     nombre = value;
             }
         }
-        public double Duracion
+        public ushort Duracion
         {
             get => duracion;
             set
@@ -73,6 +73,10 @@ namespace Bibl_Streaming.Clases
             {
                 throw new Exception("Ocurrió un error en método Acumular puntos en la clase Pelicula.");
             }
+        }
+        public override string ToString()
+        {
+            return nombre;
         }
     }
 }
