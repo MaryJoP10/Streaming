@@ -14,7 +14,7 @@ namespace Bibl_Streaming.Clases
         private ulong suma_scores;
         private ulong suma_capitulos;
         private ulong suma_minutos;
-        private double puntos_totales;
+        private ulong puntos_totales = 50000;
 
         //Constructores
         public Cuenta(Usuario usuario)
@@ -42,7 +42,7 @@ namespace Bibl_Streaming.Clases
             get => suma_minutos;
             set => suma_minutos = value;
         }
-        public double Puntos_totales 
+        public ulong Puntos_totales 
         { 
             get => puntos_totales; 
             set => puntos_totales = value;
@@ -52,7 +52,7 @@ namespace Bibl_Streaming.Clases
         {
             try
             {
-                Puntos_totales = Suma_capitulos + Suma_minutos + Suma_scores;
+                Puntos_totales =  Suma_capitulos + Suma_minutos + Suma_scores;
             }
             catch (Exception)
             {

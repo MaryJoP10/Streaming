@@ -44,15 +44,14 @@ namespace Bibl_Streaming.Clases
         }
 
         //Metodos
-        public string Acumular_puntos(byte score, Cuenta cuenta_jugando)
+        public int Acumular_Puntos(byte score, Cuenta cuenta_jugando)
         {
             try
             {
                 byte puntos_en_score;
                 puntos_en_score = (score);
                 cuenta_jugando.Suma_scores += (ulong)puntos_en_score / 5;
-                cuenta_jugando.Acumulador_de_puntos();
-                return "Total puntos acumulados: " + cuenta_jugando.Puntos_totales;
+                return puntos_en_score / 5;
             }
             catch (Exception)
             {

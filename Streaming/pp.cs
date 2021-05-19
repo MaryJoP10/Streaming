@@ -122,9 +122,23 @@ namespace Streaming
             tb_capitulos.Clear();
             tb_nombre.Focus();
         }
+        private void Limp()
+        {
+            tb_id.Clear();
+            tb_usuario.Clear();
+            tb_usuario.Focus();
+        }
 
         private void b_infojuego_Click(object sender, EventArgs e)
         {
+            List<string> l_lbjuegos = new List<string>();
+            Cuenta cuenta_aux = lb_cuentas.SelectedItem as Cuenta;
+            Juego juego = cb_juegos.SelectedItem as Juego;
+            l_lbjuegos.Add("Nombre juego: " + juego.Nombre);
+            l_lbjuegos.Add("Genero juego: " + juego.Genero);
+            l_lbjuegos.Add("Score sacado: " + tb_score.Text);
+            l_lbjuegos.Add("Puntos a agregar: " + juego.Acumular_Puntos(byte.Parse(tb_score.Text), cuenta_aux));
+            lb_info.DataSource = l_lbjuegos;
         }
 
         private void tb_fecha_TextChanged(object sender, EventArgs e)
@@ -153,15 +167,29 @@ namespace Streaming
             cb_cuentas_agregar.DataSource = Shander.L_cuentas;
             cb_cuentas_info.DataSource = null;
             cb_cuentas_info.DataSource = Shander.L_cuentas;
+
         }
 
         private void cb_cuentas_info_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Cuenta cuenta_aux = lb_cuentas.SelectedItem as Cuenta;
+            tb_acumulado.Text = cuenta_aux.Puntos_totales.ToString();
+
+            Limp();
         }
 
         private void cb_cuentas_agregar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_info_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }
