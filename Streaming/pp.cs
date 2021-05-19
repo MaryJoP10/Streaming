@@ -13,13 +13,10 @@ namespace Streaming
 {
     public partial class pp : Form
     {
-        enum ll_juegos { }
-        List<string> list1 = new List<string>();
-        List<string> list2 = new List<string>();
-        List<string> list3 = new List<string>();
         List<Juego> l_juegos = new List<Juego>();
         List<Serie> l_series = new List<Serie>();
         List<Pelicula> l_peliculas = new List<Pelicula>();
+        Proveedor Shander = new Proveedor();
         public pp()
         {
             InitializeComponent();
@@ -142,6 +139,27 @@ namespace Streaming
         }
 
         private void b_crear_Click(object sender, EventArgs e)
+        {
+            DateTime fecha = Convert.ToDateTime(tb_fecha.Text);
+            //Crear Usuario
+            Usuario usuario = new Usuario(ushort.Parse(tb_id.Text), tb_usuario.Text, fecha);
+            Cuenta cuenta = new Cuenta(usuario);
+
+            Shander.L_cuentas.Add(cuenta);
+            lb_cuentas.DataSource = null;
+            lb_cuentas.DataSource = Shander.L_cuentas;
+
+            cb_cuentas_agregar.DataSource = null;
+            cb_cuentas_agregar.DataSource = Shander.L_cuentas;
+            cb_cuentas_info.DataSource = null;
+            cb_cuentas_info.DataSource = Shander.L_cuentas;
+        }
+
+        private void cb_cuentas_info_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cb_cuentas_agregar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -10,18 +10,24 @@ namespace Bibl_Streaming.Clases
     {
         //Atributos
         public enum l_contenido { Juego, Pelicula, Serie }
-        private Cuenta[] l_cuentas;
+        private List<Cuenta> l_cuentas;
         private l_contenido tipo;
 
-        
-
         //Constructores
-        public Proveedor(Cuenta[] l_cuentas)
+        public Proveedor()
         {
-            this.l_cuentas = l_cuentas;
+            l_cuentas = new List<Cuenta>();
         }
 
         //Accesores
         public l_contenido Tipo { get => this.tipo; set => this.tipo = value; }
+        public List<Cuenta> L_cuentas 
+        { 
+            get => l_cuentas; 
+            set => l_cuentas = value; 
+        }
+
+        //Metodo
+
     }
 }

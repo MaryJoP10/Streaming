@@ -18,5 +18,38 @@ namespace Bibl_Streaming.Clases
         //Accesores
 
         //Metodos
+        public string Acumular_Puntos(ulong episodios_vistos, Cuenta cuenta_viendo)
+        {
+            try
+            {
+                ulong puntos_por_capitulo;
+
+                puntos_por_capitulo = (episodios_vistos);
+                cuenta_viendo.Suma_capitulos += puntos_por_capitulo / 2;
+                cuenta_viendo.Acumulador_de_puntos();
+                return "Total puntos acumulados: " + cuenta_viendo.Puntos_totales;
+            }
+            catch (Exception)
+            {
+                throw new Exception("ERROR: ocurrio un error en clase AAcumular_puntos en clase Serie");
+            }
+        }
+        public string Acumular_Puntos(ulong horas_vistas, ulong minutos_vistos, Cuenta cuenta_viendo)
+        {
+            try
+            {
+                ulong minutos_vistos_aux;
+                ulong conversion_horas_minutos = horas_vistas * 60;
+
+                minutos_vistos_aux = (conversion_horas_minutos + minutos_vistos);
+                cuenta_viendo.Suma_minutos += minutos_vistos_aux;
+                cuenta_viendo.Acumulador_de_puntos();
+                return "Total puntos acumulados: " + cuenta_viendo.Puntos_totales;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocurrió un error en método Acumular puntos en la clase Pelicula.");
+            }
+        }
     }
 }

@@ -17,9 +17,12 @@ namespace Bibl_Streaming.Clases
         private double puntos_totales;
 
         //Constructores
-        public Cuenta(Usuario usuario, Contenido contenido_visto)
+        public Cuenta(Usuario usuario)
         {
             this.usuario = usuario;
+        }
+        public Cuenta(Contenido contenido_visto)
+        {
             this.contenido_visto = contenido_visto;
         }
 
@@ -68,7 +71,10 @@ namespace Bibl_Streaming.Clases
             {
                 throw new Exception("Ocurrió un error en el método Saber Puntos en la clase cuenta.");
             }
-
+        }
+        public override string ToString()
+        {
+            return usuario.Nombre;
         }
     }
 }

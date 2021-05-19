@@ -53,5 +53,6 @@ namespace Bibl_Streaming.Clases
                     fecha_afiliacion = value;
             }
         }
+
     }
 }
